@@ -59,8 +59,6 @@ unrefVertex <- function(mesh)
 #' @export
 rmVertex <- function(mesh,index,keep=FALSE) {
     if (! keep) {
-        if (!is.null(mesh$ib) || !is.null(mesh$is) || !is.null(mesh$ip))
-            stop("Requires triangular mesh")
         index <- unique(index)
         it <- mesh$it
         itdim <- dim(it)
